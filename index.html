@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Simple Website</title>
+  <meta name="description" content="A simple, clean website built with HTML and CSS." />
+
+  <!-- ===== Ad Manager Scripts (in <head>) ===== -->
+  <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="472794"></script>
+  <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="472794"></script>
+  <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="472794"></script>
+  <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="472794"></script>
+  <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="472794"></script>
+  <!-- =========================================== -->
+
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #1e2233;
+      --muted: #626a80;
+      --brand: #4f6df5;
+      --brand-dark: #3a53cc;
+      --border: #e6e9f2;
+      --radius: 14px;
+      --shadow: 0 6px 24px rgba(30, 34, 51, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---------- Header ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .logo span { color: var(--brand); }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+      margin: 0;
+      padding: 0;
+      font-size: 0.95rem;
+    }
+    .nav ul a { color: var(--muted); font-weight: 500; }
+    .nav ul a:hover { color: var(--brand); text-decoration: none; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 72px 20px 56px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e8ecff;
+      color: var(--brand-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+    }
+
+    .hero p {
+      max-width: 580px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 26px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .btn:hover {
+      background: var(--brand-dark);
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    /* ---------- Cards ---------- */
+    main { max-width: 1040px; margin: 0 auto; padding: 0 20px 80px; }
+
+    .section-title {
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+    }
+    .section-sub {
+      color: var(--muted);
+      margin: 0 0 28px;
+      font-size: 0.95rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(30, 34, 51, 0.12);
+    }
+
+    .card .icon {
+      font-size: 1.6rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: #1e2233;
+      color: #b9c0d4;
+      padding: 36px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    footer a { color: #ffffff; }
+    footer .copy { margin-top: 8px; color: #8891a8; font-size: 0.82rem; }
+
+    @media (max-width: 560px) {
+      .nav ul { gap: 14px; font-size: 0.88rem; }
+      .hero { padding: 48px 20px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="logo">Simple<span>Site</span></div>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="badge">Welcome</span>
+    <h1>A Simple Website, Built Clean</h1>
+    <p>Lightweight HTML and CSS with no frameworks — fast to load, easy to read, and ready to customize.</p>
+    <a href="#features" class="btn">Get Started</a>
+  </section>
+
+  <main>
+    <section id="features">
+      <h2 class="section-title">Features</h2>
+      <p class="section-sub">Everything you need to get going — nothing you don't.</p>
+
+      <div class="grid">
+        <article class="card">
+          <span class="icon">⚡</span>
+          <h3>Fast</h3>
+          <p>No external frameworks or heavy assets. Just clean, semantic markup.</p>
+        </article>
+
+        <article class="card">
+          <span class="icon">📱</span>
+          <h3>Responsive</h3>
+          <p>Looks great on phones, tablets, and desktops out of the box.</p>
+        </article>
+
+        <article class="card">
+          <span class="icon">🎨</span>
+          <h3>Customizable</h3>
+          <p>Colors and spacing live in CSS variables — change them in one place.</p>
+        </article>
+
+        <article class="card">
+          <span class="icon">🔍</span>
+          <h3>SEO Friendly</h3>
+          <p>Proper meta tags, headings, and a clean document structure.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" style="margin-top: 64px;">
+      <h2 class="section-title">About</h2>
+      <p class="section-sub">A little background on this page.</p>
+      <div class="card">
+        <p>
+          This is a starter template — a single HTML file containing the layout,
+          styles, and scripts. Duplicate it, edit the text, swap the colors, and
+          you have a landing page in minutes.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top: 64px;">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-sub">Replace this with your own details.</p>
+      <div class="card">
+        <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>SimpleSite</div>
+    <div class="copy">© <span id="year"></span> SimpleSite. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
